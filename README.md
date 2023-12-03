@@ -17,7 +17,7 @@ The Data Analysis chapter of this report delves into the systematic examination 
 The first step in the EDA process was to examine the distribution of genres in the dataset. The dataset contains 19 genres, with each movie being assigned to one or more genres. The following figure shows the distribution of genres in the dataset.
 
 <div align="center">
-    <img src="figures/genres.png" width="750px">
+    <img src="./report/figures/genres.png" width="750px">
 </div>
 
 So as you may see, watches are not distributed evenly across genres. The most popular genres are Drama, Comedy, Thriller and Romance. The ratio of watches over films also varies significantly. For example, the ratio of watches to films in the Film-noir genre is close to 25, while in the Drama, which is the most popular genre, this ratio is a little more than 1. 
@@ -27,7 +27,7 @@ So as you may see, watches are not distributed evenly across genres. The most po
 Another interesting question is how many different genres users watch. The following figure shows the distribution of the number of genres watched by users. 
 
 <div align="center">
-    <img src="figures/user_genres.png" width="500px">
+    <img src="./report/figures/user_genres.png" width="500px">
 </div>
 
 As you may see, users tend to watch many different genres. That leads to the conclusion that the user's preferences are not well defined by genres.
@@ -37,7 +37,7 @@ As you may see, users tend to watch many different genres. That leads to the con
 As we are extremely limited in number of attributes, we wish to analyze the most detailed one - occupation and genre. The following figure shows the distribution of genres watched by users of different occupations. A number in the cell represents the number of watches of a particular genre by users of a particular occupation.
 
 <div align="center">
-    <img src="figures/corr.png" width="750px">
+    <img src="./report/figures/corr.png" width="750px">
 </div>
 
 The distribution is also very uneven. For example, students tend to consume all genres, while other occupations are more selective. Only a single librarian watched a film in the western genre.
@@ -107,7 +107,7 @@ Unfortunately, the dataset is very sparse, so it is very difficult to train the 
 ## Two Tower Neural Network
 
 <div align="center">
-    <img src="figures/train_1.png" width="1000px">
+    <img src="./report/figures/train_1.png" width="1000px">
 </div>
 
 The model was trained on MSE Loss and Regression Task. The model was trained for 25 epochs. The best model was selected based on the validation loss. The best loss on the validation set was 1.21. The model was trained on the following parameters:
@@ -126,7 +126,7 @@ weight_decay|0.000001
 ## DNN with Multi-Layer Embeddings
 
 <div align="center">
-    <img src="figures/train_2.png" width="1000px">
+    <img src="./report/figures/train_2.png" width="1000px">
 </div>
 
 
@@ -163,7 +163,7 @@ The evaluation metric used to assess the performance of the model was the mean s
 The results produced by both models are very poor. After evaluating models on the validation set, I collected a number of statistics to understand the reasons for such poor results. The following table shows the mean, median, and standard deviation of the number of watches vs. the rating for each film. 
 
 <div align="center">
-    <img src="figures/stat.png" width="1000px">
+    <img src="./report/figures/stat.png" width="1000px">
 </div>
 
 It can be seen from statistics, that most of the films have bad ratings which are very unstable and uncorrelated with the number of watches. This leads to the conclusion that the dataset is very sparse and the algorithm of recommendation is very difficult to train well.
