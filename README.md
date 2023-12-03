@@ -167,3 +167,51 @@ The results produced by both models are very poor. After evaluating models on th
 </div>
 
 It can be seen from statistics, that most of the films have bad ratings which are very unstable and uncorrelated with the number of watches. This leads to the conclusion that the dataset is very sparse and the algorithm of recommendation is very difficult to train well.
+
+
+# Reproduce
+
+## Environment
+
+```bash
+pip install -r requirements.txt
+```
+
+Main packages are: `torch`, `lightning`, `sentence_transformers`, `wandb`, `seaborn`, `pandas`
+
+## Data
+Download the data with the following script:
+
+```bash
+python scripts/data.py
+```
+
+## Split 
+
+I perform validation/train split with specific seed. To perform it I run:
+
+```bash
+python scripts/split.py
+```
+
+## Training 
+
+To train models I used either `train.py` or `train_simpler.py`
+
+```bash
+python train.py
+```
+
+## Benchmark
+
+Before benchmarking, the data should be copied
+
+```bash
+python scripts/benchmark.py
+```
+
+Then I am running the following Python module
+
+```bash
+python -m benchmark.simple -u <USER_ID>
+```
